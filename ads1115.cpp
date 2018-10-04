@@ -106,6 +106,9 @@ int ads1115::SetupConfig(int InPutPin,int PGA,int SPS,int _FPS)
     if(write(fd,writeBuf,3)!=3)
         return WriteErr;
     FPS=_FPS;
+    uint8_t readBuf[2]={0};
+    if(write(fd,readBuf,1)!=1)
+        return ReadErr;
     return NoneErr;
 }
 void ads1115::run()
@@ -116,7 +119,7 @@ void ads1115::run()
     auto t2=t1;
     while(1)
     {
-        uint8_t readBuf[2];
+        uint8_t readBuf[2]={0};
         QMutex mutex;
         mutex.lock();
         if(read(fd,readBuf,2)!=2)

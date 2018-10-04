@@ -29,7 +29,7 @@ enum ErrorType
     WriteErr,ReadErr
 
 };
-#define	CONFIG_OS_MASK_HIGH		(0x81)	// Operational Status Register
+#define	CONFIG_OS_MASK_HIGH		(0x80)	// Operational Status Register
 #define	CONFIG_OS_MASK_LOW		(0x03)	// Operational Status Register
 // The multiplexor
 #define	CONFIG_MUX_MASK		(0x70)
@@ -61,10 +61,10 @@ enum ErrorType
 #define	CONFIG_DR_8SPS		(0x00)	//   8 samples per second
 #define	CONFIG_DR_16SPS		(0x20)	//  16 samples per second
 #define	CONFIG_DR_32SPS		(0x40)	//  32 samples per second
-#define	CONFIG_DR_64SPS		(0x60)	//  64 samples per second
-#define	CONFIG_DR_128SPS	(0x80)	// 128 samples per second (default)
-#define	CONFIG_DR_475SPS	(0xA0)	// 475 samples per second
-#define	CONFIG_DR_860SPS	(0xC0)	// 860 samples per second
+#define	CONFIG_DR_64SPS		(0x80)	//  64 samples per second
+#define	CONFIG_DR_128SPS	(0xA0)	// 128 samples per second (default)
+#define	CONFIG_DR_475SPS	(0xC0)	// 475 samples per second
+#define	CONFIG_DR_860SPS	(0xE0)	// 860 samples per second
 
 #define	CONFIG_DEFAULT_HIGHByte		(0x84)	// From the datasheet,Modify to Continuous mode
 #define	CONFIG_DEFAULT_LOWByte	(0x83)
